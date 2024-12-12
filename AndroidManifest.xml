@@ -15,7 +15,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".XmlPickerActivity" />
         <activity android:name=".ExportActivity" />
         <activity android:name=".ImportActivity" />
     </application>
