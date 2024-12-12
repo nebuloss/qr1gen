@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.nebuloss.testapp">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+    <application
+        android:allowBackup="true"
+        android:label="Test app"
+        android:theme="@android:style/Theme.Light"
+        android:icon="@mipmap/icon"
+        android:name=".App"
+    >
+        <activity android:name=".QrCodeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".XmlPickerActivity" />
+        <activity android:name=".ExportActivity" />
+        <activity android:name=".ImportActivity" />
+    </application>
+
+</manifest>
