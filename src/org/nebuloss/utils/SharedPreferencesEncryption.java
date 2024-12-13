@@ -16,14 +16,14 @@ public class SharedPreferencesEncryption{
 
     private static SharedPreferencesEncryption instance=null;
 
-    private byte[] SECRET={83, 104, 97, 105, 50, 65, 113, 117, 101, 105};
-    private String SALT="A99BC8325634E303";
+    private char[] SECRET = {0x53, 0x68, 0x61, 0x69, 0x32, 0x41, 0x71, 0x75, 0x65, 0x69};
+    private byte[] SALT = {(byte) 0xA9, (byte) 0x9B, (byte) 0xC8, (byte) 0x32, (byte) 0x56, (byte) 0x34, (byte) 0xE3, (byte) 0x03};
     
 
     private SharedPreferencesEncryption() throws Exception{
-        secretKey=SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(new PBEKeySpec(new String(SECRET).toCharArray()));
+        secretKey=SecretKeyFactory.getInstance("PBEWithMD5AndDES").generateSecret(new PBEKeySpec(SECRET));
         cipher = Cipher.getInstance(secretKey.getAlgorithm());
-        algorithmParameterSpec = new PBEParameterSpec(HexUtils.parseHex(SALT), 0x13);
+        algorithmParameterSpec = new PBEParameterSpec(SALT, 0x13);
     }
 
     public static SharedPreferencesEncryption getInstance() throws Exception{

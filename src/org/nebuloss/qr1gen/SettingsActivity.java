@@ -1,4 +1,4 @@
-package org.nebuloss.testapp;
+package org.nebuloss.qr1gen;
 
 import org.nebuloss.utils.QrCodeGenerator;
 import org.nebuloss.widgets.CheckboxWithTextView;

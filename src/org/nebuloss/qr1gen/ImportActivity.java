@@ -1,4 +1,4 @@
-package org.nebuloss.testapp;
+package org.nebuloss.qr1gen;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,22 +6,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class ExportActivity extends Activity {
+public class ImportActivity extends Activity {
 
-    private static final int PICK_FILE_REQUEST_CODE = 1;  // Request code for file picker
+    private static final int PICK_FILE_REQUEST_CODE = 2;  // Request code for file picker
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Trigger file picker
+        // Trigger file picker to select the file for import
         openFilePicker();
     }
 
     private void openFilePicker() {
         // Create an intent to open a file picker
-        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("text/xml");
-        intent.putExtra(Intent.EXTRA_TITLE, "backup.xml");
         startActivityForResult(intent, PICK_FILE_REQUEST_CODE);
     }
 
@@ -34,10 +33,11 @@ public class ExportActivity extends Activity {
                 Uri uri = data.getData();
                 if (uri != null) {
                     try{
-                        SharedPreferencesHelper.getInstance().exportSharedPreferences(uri);;
+                        SharedPreferencesHelper.getInstance().importSharedPreferences(uri);
                     }catch (Exception e){
-                        Toast.makeText(this, "Failed to export config: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Failed to import config: " + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
+                    
                 }
             }
         }

@@ -1,4 +1,4 @@
-package org.nebuloss.testapp;
+package org.nebuloss.qr1gen;
 
 import org.nebuloss.utils.InvalidFormatException;
 import org.nebuloss.utils.QrCodeGenerator;

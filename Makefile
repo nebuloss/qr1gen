@@ -29,7 +29,7 @@ APKSIGNER = apksigner
 ZIPALIGN= zipalign
 ADB = adb
 
-PACKAGE_NAME= org.nebuloss.testapp
+PACKAGE_NAME= org.nebuloss.qr1gen
 PACKAGE_MAINACTIVITY= QrCodeActivity
 
 # This makefile allows to compile automatically java files and produce a jar

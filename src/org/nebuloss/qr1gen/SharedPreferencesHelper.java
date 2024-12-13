@@ -1,4 +1,4 @@
-package org.nebuloss.testapp;
+package org.nebuloss.qr1gen;
 
 import java.io.File;
 import java.io.FileInputStream;

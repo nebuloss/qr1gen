@@ -31,3 +31,7 @@ The Makefile can generate automatically a basic keystore using these information
 You can compile the app with the command: `make`
 
 Then, install the app on an emulator or directly on your phone: `make install`
+
+# Credits
+
+iconixar on Flaticon for the app icon
